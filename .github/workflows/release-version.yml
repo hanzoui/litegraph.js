@@ -1,3 +1,4 @@
+# Secrets: Hanzo KMS (kms.hanzo.ai) — auth via Hanzo IAM
 name: Release a New Version
 description: Creates a PR to increment the version. When the PR is merged, it will automatically create a release.
 
@@ -24,6 +25,13 @@ jobs:
       pull-requests: write
 
     steps:
+      - name: Fetch secrets from Hanzo KMS
+        id: kms
+        uses: hanzoui/.github/actions/kms-secrets@main
+        with:
+          kms_client_id: ${{ secrets.KMS_CLIENT_ID }}
+          kms_client_secret: ${{ secrets.KMS_CLIENT_SECRET }}
+          secrets: 'PR_GH_TOKEN'
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -49,7 +57,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e
         with:
-          token: ${{ secrets.PR_GH_TOKEN }}
+          token: ${{ steps.kms.outputs.PR_GH_TOKEN }}
           commit-message: "[Release] Increment version to ${{ steps.bump-version.outputs.NEW_VERSION }}"
           title: ${{ steps.bump-version.outputs.NEW_VERSION }}
           body: |
