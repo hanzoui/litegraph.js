@@ -1,5 +1,5 @@
 # This action should be kept in sync with
-# https://github.com/hanzoui/studio_frontend/blob/main/.github/workflows/test-ui.yaml
+# https://github.com/hanzoui/frontend/blob/main/.github/workflows/test-ui.yaml
 
 name: Test Hanzo Frontend
 
@@ -48,14 +48,14 @@ jobs:
       - name: Checkout HanzoStudio_frontend
         uses: actions/checkout@v4
         with:
-          repository: "hanzoui/studio_frontend"
+          repository: "hanzoui/frontend"
           path: "HanzoStudio_frontend"
           ref: ${{ inputs.frontend-branch }}
 
       - name: Checkout HanzoStudio_devtools
         uses: actions/checkout@v4
         with:
-          repository: "hanzoui/studio_devtools"
+          repository: "hanzoui/devtools"
           path: "HanzoStudio/custom_nodes/HanzoStudio_devtools"
 
       - uses: actions/setup-node@v4

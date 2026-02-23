@@ -6,14 +6,14 @@
 
 As of August 5, 2025, hanzoui/litegraph.js is now part of the Hanzo Frontend monorepo:
 
-- **Source Code**: https://github.com/hanzoui/studio_frontend/tree/main/src/lib/litegraph
-- **Repository**: https://github.com/hanzoui/studio_frontend
-- **Pull Request**: https://github.com/hanzoui/studio_frontend/pull/4667
-- **Architecture Decision**: https://github.com/hanzoui/studio_frontend/blob/main/docs/adr/0001-merge-litegraph-into-frontend.md
+- **Source Code**: https://github.com/hanzoui/frontend/tree/main/src/lib/litegraph
+- **Repository**: https://github.com/hanzoui/frontend
+- **Pull Request**: https://github.com/hanzoui/frontend/pull/4667
+- **Architecture Decision**: https://github.com/hanzoui/frontend/blob/main/docs/adr/0001-merge-litegraph-into-frontend.md
 
 ## 📝 For Developers
 
-- **Report Issues**: Please report any issues at https://github.com/hanzoui/studio_frontend/issues
+- **Report Issues**: Please report any issues at https://github.com/hanzoui/frontend/issues
 - **Contribute**: All contributions should be made to the Hanzo Frontend repository
 - **Import Path**: Changed from `@hanzoui/litegraph` to `@/lib/litegraph` within Hanzo Studio
 
@@ -29,11 +29,11 @@ hanzoui/litegraph.js was only used by Hanzo Studio, and maintaining it as a sepa
 - Simplified maintenance
 - No more version mismatch issues
 
-For more details, see the [Architecture Decision Record](https://github.com/hanzoui/studio_frontend/blob/main/docs/adr/0001-merge-litegraph-into-frontend.md).
+For more details, see the [Architecture Decision Record](https://github.com/hanzoui/frontend/blob/main/docs/adr/0001-merge-litegraph-into-frontend.md).
 
 # @ComfyOrg/litegraph
 
-This is the litegraph version used in [HanzoStudio_frontend](https://github.com/hanzoui/studio_frontend).
+This is the litegraph version used in [Hanzo Frontend](https://github.com/hanzoui/frontend).
 
 It is a fork of the original `litegraph.js`. Some APIs may by unchanged, however it is largely incompatible with the original.
 
