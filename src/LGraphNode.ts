@@ -3777,7 +3777,7 @@ export class LGraphNode implements NodeLike, Positionable, IPinnable, IColorable
     if (!this.graph) throw new NullGraphError()
 
     // Grow the node if necessary.
-    // Ref: https://github.com/hanzoui/studio_frontend/issues/2652
+    // Ref: https://github.com/hanzoui/frontend/issues/2652
     // TODO: Move the layout logic before drawing of the node shape, so we don't
     // need to trigger extra round of rendering.
     if (y > bodyHeight) {
