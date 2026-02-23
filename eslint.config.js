@@ -58,7 +58,7 @@ export default tseslint.config(
   {
     rules: {
       // Temporarily disabled
-      // See https://github.com/Comfy-Org/litegraph.js/issues/629
+      // See https://github.com/hanzoui/litegraph.js/issues/629
       "unicorn/no-lonely-if": "off",
       "unicorn/no-this-assignment": "off",
       "unicorn/no-useless-switch-case": "off",
@@ -127,7 +127,7 @@ export default tseslint.config(
       "prefer-template": "error",
 
       // TODO: Update when TypeScript has been cleaned
-      // https://github.com/Comfy-Org/litegraph.js/issues/657
+      // https://github.com/hanzoui/litegraph.js/issues/657
       "@typescript-eslint/no-unnecessary-type-assertion": "off",
       "prefer-spread": "off",
       "no-empty": "off",

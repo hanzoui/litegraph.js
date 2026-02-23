@@ -1,21 +1,21 @@
-# ⛔ ARCHIVED - Comfy-Org/litegraph.js has been merged into ComfyUI Frontend
+# ⛔ ARCHIVED - hanzoui/litegraph.js has been merged into Hanzo Frontend
 
-> **This repository is archived and no longer maintained. The code has been integrated directly into the ComfyUI Frontend repository.**
+> **This repository is archived and no longer maintained. The code has been integrated directly into the Hanzo Frontend repository.**
 
 ## 🚀 New Location
 
-As of August 5, 2025, Comfy-Org/litegraph.js is now part of the ComfyUI Frontend monorepo:
+As of August 5, 2025, hanzoui/litegraph.js is now part of the Hanzo Frontend monorepo:
 
-- **Source Code**: https://github.com/Comfy-Org/ComfyUI_frontend/tree/main/src/lib/litegraph
-- **Repository**: https://github.com/Comfy-Org/ComfyUI_frontend
-- **Pull Request**: https://github.com/Comfy-Org/ComfyUI_frontend/pull/4667
-- **Architecture Decision**: https://github.com/Comfy-Org/ComfyUI_frontend/blob/main/docs/adr/0001-merge-litegraph-into-frontend.md
+- **Source Code**: https://github.com/hanzoui/studio_frontend/tree/main/src/lib/litegraph
+- **Repository**: https://github.com/hanzoui/studio_frontend
+- **Pull Request**: https://github.com/hanzoui/studio_frontend/pull/4667
+- **Architecture Decision**: https://github.com/hanzoui/studio_frontend/blob/main/docs/adr/0001-merge-litegraph-into-frontend.md
 
 ## 📝 For Developers
 
-- **Report Issues**: Please report any issues at https://github.com/Comfy-Org/ComfyUI_frontend/issues
-- **Contribute**: All contributions should be made to the ComfyUI Frontend repository
-- **Import Path**: Changed from `@comfyorg/litegraph` to `@/lib/litegraph` within ComfyUI
+- **Report Issues**: Please report any issues at https://github.com/hanzoui/studio_frontend/issues
+- **Contribute**: All contributions should be made to the Hanzo Frontend repository
+- **Import Path**: Changed from `@hanzoui/litegraph` to `@/lib/litegraph` within Hanzo Studio
 
 ## 🔄 Migration Details
 
@@ -23,35 +23,35 @@ The complete git history has been preserved using git subtree merge. All commits
 
 ## ❓ Why Was This Archived?
 
-Comfy-Org/litegraph.js was only used by ComfyUI, and maintaining it as a separate package created unnecessary complexity. The integration enables:
+hanzoui/litegraph.js was only used by Hanzo Studio, and maintaining it as a separate package created unnecessary complexity. The integration enables:
 - Faster development cycles
 - Better architectural refactoring
 - Simplified maintenance
 - No more version mismatch issues
 
-For more details, see the [Architecture Decision Record](https://github.com/Comfy-Org/ComfyUI_frontend/blob/main/docs/adr/0001-merge-litegraph-into-frontend.md).
+For more details, see the [Architecture Decision Record](https://github.com/hanzoui/studio_frontend/blob/main/docs/adr/0001-merge-litegraph-into-frontend.md).
 
 # @ComfyOrg/litegraph
 
-This is the litegraph version used in [ComfyUI_frontend](https://github.com/Comfy-Org/ComfyUI_frontend).
+This is the litegraph version used in [Hanzo Studio_frontend](https://github.com/hanzoui/studio_frontend).
 
 It is a fork of the original `litegraph.js`. Some APIs may by unchanged, however it is largely incompatible with the original.
 
 Some early highlights:
 
-- Accumulated comfyUI custom changes (2024-01 ~ 2024-05) (https://github.com/Comfy-Org/litegraph.js/pull/1)
-- Type schema change for ComfyUI_frontend TS migration (https://github.com/Comfy-Org/litegraph.js/pull/3)
-- Zoom fix (https://github.com/Comfy-Org/litegraph.js/pull/7)
-- Emit search box triggering custom events (<https://github.com/Comfy-Org/litegraph.js/pull/10>)
-- Truncate overflowing combo widget text (<https://github.com/Comfy-Org/litegraph.js/pull/17>)
-- Sort node based on ID on graph serialization (<https://github.com/Comfy-Org/litegraph.js/pull/21>)
-- Fix empty input not used when connecting links (<https://github.com/Comfy-Org/litegraph.js/pull/24>)
-- Batch output connection move/disconnect (<https://github.com/Comfy-Org/litegraph.js/pull/39>)
+- Accumulated comfyUI custom changes (2024-01 ~ 2024-05) (https://github.com/hanzoui/litegraph.js/pull/1)
+- Type schema change for Hanzo Studio_frontend TS migration (https://github.com/hanzoui/litegraph.js/pull/3)
+- Zoom fix (https://github.com/hanzoui/litegraph.js/pull/7)
+- Emit search box triggering custom events (<https://github.com/hanzoui/litegraph.js/pull/10>)
+- Truncate overflowing combo widget text (<https://github.com/hanzoui/litegraph.js/pull/17>)
+- Sort node based on ID on graph serialization (<https://github.com/hanzoui/litegraph.js/pull/21>)
+- Fix empty input not used when connecting links (<https://github.com/hanzoui/litegraph.js/pull/24>)
+- Batch output connection move/disconnect (<https://github.com/hanzoui/litegraph.js/pull/39>)
 - And now with hundreds more...
 
 # Install
 
-`npm i @comfyorg/litegraph`
+`npm i @hanzoui/litegraph`
 
 # litegraph.js
 
@@ -86,7 +86,7 @@ It can be integrated easily in any existing web applications and graphs can be r
 You can install it using npm
 
 ```bash
-npm install @comfyorg/litegraph
+npm install @hanzoui/litegraph
 ```
 
 ## How to code a new Node type
@@ -143,9 +143,9 @@ graph.start()
 
 ## Projects using it
 
-### [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+### [Hanzo Studio](https://github.com/hanzoai/studio)
 
-![ComfyUI default workflow](https://github.com/comfyanonymous/ComfyUI/blob/6efe561c2a7321501b1b27f47039c7616dda1860/comfyui_screenshot.png "ComfyUI default workflow")
+![Hanzo Studio default workflow](https://github.com/hanzoai/studio/blob/6efe561c2a7321501b1b27f47039c7616dda1860/hanzo_studio_screenshot.png "Hanzo Studio default workflow")
 
 ### Projects using the original litegraph.js
 
@@ -169,7 +169,7 @@ graph.start()
 
 ## Feedback
 
-Please [open an issue](https://github.com/Comfy-Org/litegraph.js/issues/) on the GitHub repo.
+Please [open an issue](https://github.com/hanzoui/litegraph.js/issues/) on the GitHub repo.
 
 # Development
 
@@ -192,7 +192,7 @@ Use `patch` when ready to remove the pre-release suffix.
 
 ## Contributors
 
-You can find the [current list of contributors](https://github.com/Comfy-Org/litegraph.js/graphs/contributors) on GitHub.
+You can find the [current list of contributors](https://github.com/hanzoui/litegraph.js/graphs/contributors) on GitHub.
 
 ### Contributors (pre-fork)
 

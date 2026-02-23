@@ -1364,7 +1364,7 @@ export class LGraph implements LinkNetwork, BaseLGraph, Serialisable<Serialisabl
 
     reroutes.delete(id)
     // This does not belong here; it should be handled by the caller, or run by a remove-many API.
-    // https://github.com/Comfy-Org/litegraph.js/issues/898
+    // https://github.com/hanzoui/litegraph.js/issues/898
     this.setDirtyCanvas(false, true)
   }
 
