@@ -338,7 +338,7 @@ export interface INodeFlags {
  * A widget that is linked to a slot.
  *
  * This is set by the HanzoStudio_frontend logic. See
- * https://github.com/hanzoui/studio_frontend/blob/b80e0e1a3c74040f328c4e344326c969c97f67e0/src/extensions/core/widgetInputs.ts#L659
+ * https://github.com/hanzoui/frontend/blob/b80e0e1a3c74040f328c4e344326c969c97f67e0/src/extensions/core/widgetInputs.ts#L659
  */
 export interface IWidgetLocator {
   name: string
