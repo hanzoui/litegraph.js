@@ -45,18 +45,18 @@ jobs:
           path: "Hanzo Studio"
           ref: master
 
-      - name: Checkout Hanzo Studio_frontend
+      - name: Checkout HanzoStudio_frontend
         uses: actions/checkout@v4
         with:
           repository: "hanzoui/studio_frontend"
-          path: "Hanzo Studio_frontend"
+          path: "HanzoStudio_frontend"
           ref: ${{ inputs.frontend-branch }}
 
-      - name: Checkout Hanzo Studio_devtools
+      - name: Checkout HanzoStudio_devtools
         uses: actions/checkout@v4
         with:
           repository: "hanzoui/studio_devtools"
-          path: "Hanzo Studio/custom_nodes/Hanzo Studio_devtools"
+          path: "Hanzo Studio/custom_nodes/HanzoStudio_devtools"
 
       - uses: actions/setup-node@v4
         with:
@@ -80,16 +80,16 @@ jobs:
           npm run build
         working-directory: litegraph
 
-      - name: Install updated litegraph in Hanzo Studio_frontend
+      - name: Install updated litegraph in HanzoStudio_frontend
         run: |
           npm ci
           npm install ../litegraph
           npm run build
-        working-directory: Hanzo Studio_frontend
+        working-directory: HanzoStudio_frontend
 
       - name: Start Hanzo Studio server
         run: |
-          python main.py --cpu --multi-user --front-end-root ../Hanzo Studio_frontend/dist &
+          python main.py --cpu --multi-user --front-end-root ../HanzoStudio_frontend/dist &
           wait-for-it --service 127.0.0.1:8188 -t 600
         working-directory: Hanzo Studio
 
@@ -97,19 +97,19 @@ jobs:
         run: |
           npm run test:component
           npm run test:unit
-        working-directory: Hanzo Studio_frontend
+        working-directory: HanzoStudio_frontend
 
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
-        working-directory: Hanzo Studio_frontend
+        working-directory: HanzoStudio_frontend
 
       - name: Run Playwright tests (chromium)
         run: npx playwright test --project=chromium
-        working-directory: Hanzo Studio_frontend
+        working-directory: HanzoStudio_frontend
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
-          path: Hanzo Studio_frontend/playwright-report/
+          path: HanzoStudio_frontend/playwright-report/
           retention-days: 30
