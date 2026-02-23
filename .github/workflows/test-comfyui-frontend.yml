@@ -1,7 +1,7 @@
 # This action should be kept in sync with
-# https://github.com/Comfy-Org/ComfyUI_frontend/blob/main/.github/workflows/test-ui.yaml
+# https://github.com/hanzoui/studio_frontend/blob/main/.github/workflows/test-ui.yaml
 
-name: Test ComfyUI Frontend
+name: Test Hanzo Frontend
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ on:
       - "test/**"
 
 jobs:
-  test-comfyui-frontend:
+  test-hanzo-studio-frontend:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout litegraph
@@ -38,25 +38,25 @@ jobs:
         with:
           path: "litegraph"
 
-      - name: Checkout ComfyUI
+      - name: Checkout Hanzo Studio
         uses: actions/checkout@v4
         with:
-          repository: "comfyanonymous/ComfyUI"
-          path: "ComfyUI"
+          repository: "hanzoai/studio"
+          path: "Hanzo Studio"
           ref: master
 
-      - name: Checkout ComfyUI_frontend
+      - name: Checkout Hanzo Studio_frontend
         uses: actions/checkout@v4
         with:
-          repository: "Comfy-Org/ComfyUI_frontend"
-          path: "ComfyUI_frontend"
+          repository: "hanzoui/studio_frontend"
+          path: "Hanzo Studio_frontend"
           ref: ${{ inputs.frontend-branch }}
 
-      - name: Checkout ComfyUI_devtools
+      - name: Checkout Hanzo Studio_devtools
         uses: actions/checkout@v4
         with:
-          repository: "Comfy-Org/ComfyUI_devtools"
-          path: "ComfyUI/custom_nodes/ComfyUI_devtools"
+          repository: "hanzoui/studio_devtools"
+          path: "Hanzo Studio/custom_nodes/Hanzo Studio_devtools"
 
       - uses: actions/setup-node@v4
         with:
@@ -72,7 +72,7 @@ jobs:
           pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install -r requirements.txt
           pip install wait-for-it
-        working-directory: ComfyUI
+        working-directory: Hanzo Studio
 
       - name: Build litegraph
         run: |
@@ -80,36 +80,36 @@ jobs:
           npm run build
         working-directory: litegraph
 
-      - name: Install updated litegraph in ComfyUI_frontend
+      - name: Install updated litegraph in Hanzo Studio_frontend
         run: |
           npm ci
           npm install ../litegraph
           npm run build
-        working-directory: ComfyUI_frontend
+        working-directory: Hanzo Studio_frontend
 
-      - name: Start ComfyUI server
+      - name: Start Hanzo Studio server
         run: |
-          python main.py --cpu --multi-user --front-end-root ../ComfyUI_frontend/dist &
+          python main.py --cpu --multi-user --front-end-root ../Hanzo Studio_frontend/dist &
           wait-for-it --service 127.0.0.1:8188 -t 600
-        working-directory: ComfyUI
+        working-directory: Hanzo Studio
 
       - name: Run UI tests
         run: |
           npm run test:component
           npm run test:unit
-        working-directory: ComfyUI_frontend
+        working-directory: Hanzo Studio_frontend
 
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
-        working-directory: ComfyUI_frontend
+        working-directory: Hanzo Studio_frontend
 
       - name: Run Playwright tests (chromium)
         run: npx playwright test --project=chromium
-        working-directory: ComfyUI_frontend
+        working-directory: Hanzo Studio_frontend
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
-          path: ComfyUI_frontend/playwright-report/
+          path: Hanzo Studio_frontend/playwright-report/
           retention-days: 30
