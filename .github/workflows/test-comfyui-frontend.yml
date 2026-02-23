@@ -56,7 +56,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: "hanzoui/studio_devtools"
-          path: "Hanzo Studio/custom_nodes/HanzoStudio_devtools"
+          path: "HanzoStudio/custom_nodes/HanzoStudio_devtools"
 
       - uses: actions/setup-node@v4
         with:
