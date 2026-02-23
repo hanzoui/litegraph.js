@@ -33,14 +33,14 @@ For more details, see the [Architecture Decision Record](https://github.com/hanz
 
 # @ComfyOrg/litegraph
 
-This is the litegraph version used in [Hanzo Studio_frontend](https://github.com/hanzoui/studio_frontend).
+This is the litegraph version used in [HanzoStudio_frontend](https://github.com/hanzoui/studio_frontend).
 
 It is a fork of the original `litegraph.js`. Some APIs may by unchanged, however it is largely incompatible with the original.
 
 Some early highlights:
 
 - Accumulated comfyUI custom changes (2024-01 ~ 2024-05) (https://github.com/hanzoui/litegraph.js/pull/1)
-- Type schema change for Hanzo Studio_frontend TS migration (https://github.com/hanzoui/litegraph.js/pull/3)
+- Type schema change for HanzoStudio_frontend TS migration (https://github.com/hanzoui/litegraph.js/pull/3)
 - Zoom fix (https://github.com/hanzoui/litegraph.js/pull/7)
 - Emit search box triggering custom events (<https://github.com/hanzoui/litegraph.js/pull/10>)
 - Truncate overflowing combo widget text (<https://github.com/hanzoui/litegraph.js/pull/17>)
