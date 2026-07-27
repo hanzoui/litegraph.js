@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
 
@@ -25,7 +25,6 @@
 
     /* AllowJs during migration phase */
     "allowJs": true,
-    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
