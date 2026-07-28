@@ -18,7 +18,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "downlevelIteration": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "verbatimModuleSyntax": true,
@@ -26,7 +25,9 @@
     /* AllowJs during migration phase */
     "allowJs": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
     "typeRoots": [],
     "outDir": "./dist",
